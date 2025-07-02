@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Navbar({title,aboutText}) {
+export default function Navbar({title = 'TextUtils', aboutText = 'About'}) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
