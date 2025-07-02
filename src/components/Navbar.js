@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default function Navbar({title = 'TextUtils', aboutText = 'About'}) {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">{title}</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
@@ -20,7 +20,7 @@ export default function Navbar({title = 'TextUtils', aboutText = 'About'}) {
           </ul>
           <form className="d-flex" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" />
-            <button className="btn btn-outline-success" type="submit">Search</button>
+            <button className="btn btn-outline-primary" type="submit">Search</button>
           </form>
         </div>
       </div>
