@@ -17,7 +17,17 @@ function App() {
   const [alert, setAlert] = useState(null);
   const [greenColor, setGreenColor] = useState('light');
 
-  const toggleMode = () => {
+  const removeBgClasses = () => {
+    document.body.classList.remove('bg-dark');
+    document.body.classList.remove('bg-danger');
+    document.body.classList.remove('bg-success');
+    document.body.classList.remove('bg-warning');
+    document.body.classList.remove('bg-light');
+  };
+
+  const toggleMode = (cls) => {
+    removeBgClasses();
+    document.body.classList.add(`bg-${cls}`);
     if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = '#042743';
