@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Navbar({ title = 'TextUtils', aboutText = 'About', mode = 'light', toggleMode, color, toggleColor }) {
+export default function Navbar({ title = 'TextUtils', aboutText = 'About', mode = 'light', toggleMode, color, toggleColor, toggleGreenColor }) {
     return (
         <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
             <div className="container-fluid">
@@ -22,10 +22,13 @@ export default function Navbar({ title = 'TextUtils', aboutText = 'About', mode 
             <input className="form-control me-2" type="search" placeholder="Search" />
             <button className="btn btn-outline-primary" type="submit">Search</button>
           </form> */}
-          {console.log(color)}
                     <div className={`form-check form-switch text-${color}`}>
                         <input className="form-check-input" type="checkbox" role="switch" id="switchCheckDefault" onClick={() => {toggleMode(); toggleColor()}}/>
                         <label className="form-check-label" htmlFor="switchCheckDefault">Enable Dark Mode</label>
+                    </div>
+                    <div className={`form-check form-switch text-${color} mx-2`}>
+                        <input className="form-check-input" type="checkbox" role="switch" id="switchCheckDefault" onClick={() => {toggleGreenColor()}}/>
+                        <label className="form-check-label" htmlFor="switchCheckDefault">Enable Green Mode</label>
                     </div>
                 </div>
             </div>
