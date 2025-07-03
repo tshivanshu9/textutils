@@ -15,10 +15,7 @@ export default function TextForm(props) {
         props.showAlert("Converted to LowerCase", "success");
     };
     const handleCopy = () => {
-        const text = document.getElementById("myBox");
-        text.select();
-        navigator.clipboard.writeText(text.value);
-        document.getSelection().removeAllRanges();
+        navigator.clipboard.writeText(text);
     };
     const [text, setText] = useState('');
     const getWordCount = (str) => {
