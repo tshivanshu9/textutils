@@ -4,6 +4,7 @@ export default function TextForm(props) {
     const handleUpClick = () => {
         const newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Converted to UpperCase", "success");
     };
     const handleOnChange = (event) => {
         setText(event.target.value);
@@ -11,6 +12,7 @@ export default function TextForm(props) {
     const handleLoClick = () => {
         const newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Converted to LowerCase", "success");
     };
     const handleCopy = () => {
         const text = document.getElementById("myBox");
