@@ -18,6 +18,7 @@ export default function TextForm(props) {
         const text = document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
+        document.getSelection().removeAllRanges();
     };
     const [text, setText] = useState('');
     const getWordCount = (str) => {
@@ -30,15 +31,15 @@ export default function TextForm(props) {
                 <div className="mb-3">
                     <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"
                         style={{
-                            backgroundColor: props.mode === 'dark' ? 'grey' : 'white',
+                            backgroundColor: props.mode === 'dark' ? '#4d7ea6' : 'white',
                             color: props.mode === 'dark' ? 'white' : props.mode === 'green' ? 'orange' : '#042743'
                         }}></textarea>
                 </div>
-                <button className="btn btn-primary mx-1" onClick={handleUpClick}
+                <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick}
                     style={{ backgroundColor: props.mode === 'green' ? 'darkgreen' : 'blue', border: props.mode === 'green' ? 'black' : 'blue', color: props.mode === 'dark' ? 'white' : props.mode === 'green' ? 'orange' : '#042743' }}>Convert to UpperCase</button>
-                <button className="btn btn-primary mx-1" onClick={handleLoClick}
+                <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleLoClick}
                     style={{ backgroundColor: props.mode === 'green' ? 'darkgreen' : 'blue', border: props.mode === 'green' ? 'black' : 'blue', color: props.mode === 'dark' ? 'white' : props.mode === 'green' ? 'orange' : '#042743' }}>Convert to LowerCase</button>
-                <button className="btn btn-primary mx-1" onClick={handleCopy}
+                <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCopy}
                     style={{ backgroundColor: props.mode === 'green' ? 'darkgreen' : 'blue', border: props.mode === 'green' ? 'black' : 'blue', color: props.mode === 'dark' ? 'white' : props.mode === 'green' ? 'orange' : '#042743' }}>Copy to Clipboard</button>
             </div>
             <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : props.mode === 'green' ? 'orange' : '#042743' }}>
